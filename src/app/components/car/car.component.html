@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <h4><mark>Автомобиль:</mark> {{model}}.</h4>
+  <h4><mark>Автомобиль:</mark> {{name}} {{model}}</h4>
   <div class="alert alert-success">
     Характеристики автомобиля
     <ul>
@@ -11,6 +11,28 @@
     </ul>
   </div>
 
+
+  <form *ngIf=isEdit>
+    <h5>Редактирование обьекта</h5>
+    <div class="form-group">
+      <input type="text" id="option" placeholder="Название машины"
+      class="form-control" [(ngModel)]="name" name="name"> <br>
+      <input type="text" id="option" placeholder="Модель машины"
+      class="form-control" [(ngModel)]="model" name="model"> <br>
+      <input type="number" id="option" placeholder="Скорость"
+      class="form-control" [(ngModel)]="speed" name="speed"> <br>
+      <input type="text" id="option" placeholder="Цвет машины"
+      class="form-control" [(ngModel)]="colors.car" name="car"> <br>
+      <input type="text" id="option" placeholder="Цвет салона"
+      class="form-control" [(ngModel)]="colors.salon" name="salon"> <br>
+      <input type="text" id="option" placeholder="Цвет колес"
+      class="form-control" [(ngModel)]="colors.wheels" name="wheels">
+      <br>
+
+
+    </div>
+  </form>
+
   <h5>Возможности автомобиля</h5>
   <form (submit)="addOpt(option.value)">
     <div class="form-group">
@@ -19,7 +41,7 @@
       <br>
       <button type="submit" class="btn btn-outline-success">Добавить</button>
       <button type="button"
-           class="btn btn-outline-success">Редактировать</button>
+           class="btn btn-outline-success" (click)="ShowEdit()">Редактировать</button>
 
 
     </div>

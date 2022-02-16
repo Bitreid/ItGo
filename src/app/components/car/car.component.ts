@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
+  name:string;
   model:string;
   speed:number;
   colors:Colors;
   options:string[];
   test:any;
+  isEdit:boolean = false;
 
 
   constructor() { }
@@ -19,7 +21,8 @@ export class CarComponent implements OnInit {
 //задание значения в поля
   ngOnInit(): void {
     this.speed = 235;
-    this.model = 'Audi RS8';
+    this.name = 'Audi ';
+    this.model = 'RS8';
     this.colors = {
       car: 'Белый',
       salon: 'Черный',
@@ -28,6 +31,10 @@ export class CarComponent implements OnInit {
     this.options = ["ABS","Автопилот","Авто Паркинг"];
     this.test = true;
   }
+
+ShowEdit(){
+  this.isEdit = !this.isEdit;
+}
 
 // Добавление в массив нового элемента в начало
   addOpt(option) {
@@ -48,7 +55,8 @@ deleteOpt(option) {
   carSelect(carName) {
         if(carName =='bmw'){
             this.speed = 235;
-            this.model = 'BMW M5';
+            this.name = 'BMW ';
+            this.model = 'M5';
             this.colors = {
               car: 'Синий',
               salon: 'Белый',
@@ -68,7 +76,8 @@ deleteOpt(option) {
             this.test = true;
         } else if (carName == 'mer') {
           this.speed = 180;
-          this.model = 'Mersedes';
+          this.name = 'Mersedes ';
+          this.model = 'W210';
           this.colors = {
             car: 'Синий',
             salon: 'Белый',
