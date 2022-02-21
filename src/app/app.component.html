@@ -11,9 +11,28 @@
         <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/">Главная</a>
         <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/about">Контакты</a>
         <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/users">Пользователи</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/menu">Меню</a>
       </nav>
-
+    <button (click)="menu.show()">Open menu</button>
     </div>
+<div>
+  <button (click)="menu.show()">Open menu</button>
+  <app-menu #menu>From App Component</app-menu>
+</div>
 
+<div>
+  <button (click)="menu1.show()">Open menu</button>
+  <app-menu #menu1>From App Component2</app-menu>
+</div>
+
+<div>
+  <button (click)="menu2.show()">Open menu</button>
+  <app-menu #menu2>From App Component3</app-menu>
+</div>
+
+<div>
+  <button (click)="menu3.show()">Open menu</button>
+  <app-menu #menu3>From App Component4</app-menu>
+</div>
 
 <router-outlet></router-outlet>
